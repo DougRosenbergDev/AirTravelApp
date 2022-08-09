@@ -12,9 +12,9 @@
         public int DreamFlightCount => Dreams?.Count ?? 0;
 
         // Navigation Properties
-        public virtual ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<BookedFlight> Flights { get; set; }
 
-        public virtual ICollection<Passenger> Purchasers { get; set; }
-        public virtual ICollection<Passenger> Dreams { get; set; }
+        public virtual ICollection<PurchasedFlight> Purchasers { get; set; }
+        public virtual ICollection<DreamFlight> Dreams { get; set; }
     }
 }
