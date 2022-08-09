@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using AirTravelApp.Data;
 
+// by default, web api API projects use attribute routing, which is slightly different from method(action) routing
+
 namespace AirTravelApp
 {
     public class Program

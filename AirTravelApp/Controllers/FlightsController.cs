@@ -10,19 +10,24 @@ using AirTravelApp.Models;
 
 namespace AirTravelApp.Controllers
 {
+    // typical placeholder added to routing tree
     [Route("api/[controller]")]
     [ApiController]
     public class FlightsController : ControllerBase
     {
         private readonly FlightDbContext _context;
+        private readonly ILogger<FlightsController> _logger;
 
-        public FlightsController(FlightDbContext context)
+        public FlightsController(ILogger<FlightsController> logger, FlightDbContext context)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Flights
+        // "HttpGet" is a decorator
         [HttpGet]
+        // GetFlights method will return flight IEnumerable as an actionresult and as a task
         public async Task<ActionResult<IEnumerable<Flight>>> GetFlights()
         {
           if (_context.Flights == null)
@@ -66,8 +71,10 @@ namespace AirTravelApp.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
+                _logger.LogError(ex, "An error occurred whilst attemption to update a flight");
+
                 if (!FlightExists(id))
                 {
                     return NotFound();
