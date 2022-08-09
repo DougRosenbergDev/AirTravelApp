@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\source\\repos\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {}
+    "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\source\\repos\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {
+    "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
         "projectName": "AirTravelApp",
-        "projectPath": "C:\\Users\\Owner\\source\\repos\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+        "projectPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\source\\repos\\AirTravelApp\\AirTravelApp\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,6 +61,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.7, )"
             },

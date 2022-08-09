@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using AirTravelApp.Data;
+
 namespace AirTravelApp
 {
     public class Program
@@ -5,6 +8,13 @@ namespace AirTravelApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<FlightDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             // Add services to the container.
 
