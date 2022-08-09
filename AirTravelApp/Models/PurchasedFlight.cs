@@ -9,6 +9,6 @@
 
         public int BookedFlightId { get; set; }
 
-        public BookedFlight BookedFlight { get; set; }
+        public Booking BookedFlight { get; set; }
     }
 }

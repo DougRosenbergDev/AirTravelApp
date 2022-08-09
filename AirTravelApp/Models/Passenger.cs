@@ -10,6 +10,6 @@
         public int Age { get; set; }
 
         // Navigation Properties
-        public virtual ICollection<BookedFlight> BookedFlights { get; set; }
+        public virtual ICollection<Booking> BookedFlights { get; set; }
     }
 }

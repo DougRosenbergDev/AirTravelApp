@@ -1,6 +1,6 @@
 ﻿namespace AirTravelApp.Models
 {
-    public class BookedFlight
+    public class Booking
     {
         public int Id { get; set; }
         public int ConfirmationNumber { get; set; }

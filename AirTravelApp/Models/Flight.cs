@@ -14,7 +14,7 @@
 
         //Navigation Properties
         // many-to-many
-        public virtual ICollection<BookedFlight> AppearsOnFlights { get; set; }
+        public virtual ICollection<Booking> AppearsOnFlights { get; set; }
         
     }
 }
