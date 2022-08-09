@@ -11,6 +11,10 @@
         public string DepartureAirport { get; set; }
         public string ArrivalAirport { get; set; }
         public int PassengerLimit { get; set; }
+
+        //Navigation Properties
+        // many-to-many
+        public virtual ICollection<BookedFlight> AppearsOnFlights { get; set; }
         
     }
 }
