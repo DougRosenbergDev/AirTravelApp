@@ -12,5 +12,8 @@
 
         // Navigation Properties
         public virtual ICollection<Flight> Flights { get; set; }
+
+        public virtual ICollection<Passenger> Purchasers { get; set; }
+        public virtual ICollection<Passenger> Dreams { get; set; }
     }
 }
