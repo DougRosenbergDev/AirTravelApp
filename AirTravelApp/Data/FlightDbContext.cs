@@ -24,9 +24,47 @@ namespace AirTravelApp.Data
 
             builder.Entity<BookedFlight>()
                 .HasOne(bf => bf.Booking)
-                .WithMany(p => p.Flights)
+                .WithMany(b => b.Flights)
+                .HasForeignKey(bf => bf.BookingId);
+               
+            builder.Entity<BookedFlight>()
+                .HasOne(bf => bf.Flight)
+                .WithMany(f => f.AppearsOnFlights)
                 .HasForeignKey(bf => bf.FlightId);
-                
+
+            // define fk for DreamFlight
+            builder.Entity<DreamFlight>()    
+                .HasKey(bf => bf.Id);
+
+            // person to playist relation
+            builder.Entity<DreamFlight>()
+                .HasOne(df => df.Passenger)
+                .WithMany(p => p.DreamFlights)
+                .HasForeignKey(df => df.PassengerId)
+            // do both sides
+            builder.Entity<DreamFlight>()
+                .HasOne(df => df.Booking)
+                .WithMany(b => b.Dreams)
+                .HasForeignKey(df => df.BookingId)
+
+            // define fk for BookedFlight
+            builder.Entity<BookedFlight>()    
+                .HasKey(bf => bf.Id);
+
+            // owned playlist
+            builder.Entity<PurchasedFlight>()
+                .HasOne(pf => pf.Passenger)
+                .WithMany(p => p.DreamFlights)
+                .HasForeignKey(pf => pf.PassengerId)
+            // do both sides
+            builder.Entity<PurchasedFlight>()
+                .HasOne(pf => pf.Booking)
+                .WithMany(b => b.Purchasers)
+                .HasForeignKey(pf => pf.BookingId)
+
+            // could be condensed in a different way: 2:30
+            // e.HasKey(ps => ps.Id)
+            // e.HasOne(
         }
     }
 }
