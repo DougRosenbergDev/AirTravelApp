@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AirTravelApp.Data;
 using AirTravelApp.Models;
+using AirTravelApp.DTO;
 
 namespace AirTravelApp.Controllers
 {
@@ -84,12 +85,28 @@ namespace AirTravelApp.Controllers
         // POST: api/Flights
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Flight>> PostFlight(Flight flight)
+        public async Task<ActionResult<Flight>> PostFlight(FlightDTO flightDto)
         {
           if (_context.Flights == null)
           {
               return Problem("Entity set 'FlightDbContext.Flights'  is null.");
           }
+          // map our DTO
+          // step 1: create a new flight object
+          var flight = new Flight()
+          {
+              // pass fields, or create an empty contstructor, then create an overloaded constructor where we can pass
+              // an instance of a FlightDto and it would return a new Flight instance
+              FlightNumber = flightDto.FlightNumber,
+
+              public string DepartureDate { get; set; }
+            public string ArrivalDate { get; set; }
+            public string DepartureTime { get; set; }
+            public string ArrivalTime { get; set; }
+            public string DepartureAirport { get; set; }
+            public string ArrivalAirport { get; set; }
+            public int PassengerLimit { get; set; }
+    }
             _context.Flights.Add(flight);
             await _context.SaveChangesAsync();
 
