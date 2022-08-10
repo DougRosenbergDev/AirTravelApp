@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AirTravelApp.Data;
 using AirTravelApp.Models;
+using AirTravelApp.DTO;
 
 namespace AirTravelApp.Controllers
 {
@@ -87,12 +88,13 @@ namespace AirTravelApp.Controllers
         // POST: api/Bookings
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Booking>> PostBooking(Booking booking)
+        public async Task<ActionResult<Booking>> PostBooking(BookingDTO dto)
         {
           if (_context.BookedFlights == null)
           {
               return Problem("Entity set 'FlightDbContext.BookedFlights'  is null.");
           }
+            var booking = new Booking(dto);
             _context.BookedFlights.Add(booking);
             await _context.SaveChangesAsync();
 

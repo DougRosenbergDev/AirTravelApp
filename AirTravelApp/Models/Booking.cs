@@ -1,4 +1,6 @@
-﻿namespace AirTravelApp.Models
+﻿using AirTravelApp.DTO;
+
+namespace AirTravelApp.Models
 {
     public class Booking
     {
@@ -17,5 +19,17 @@
         public virtual ICollection<PurchasedFlight> Purchasers { get; set; }
 
         public virtual ICollection<DreamFlight> Dreams { get; set; }
+
+        public Booking() { }
+
+        public Booking(BookingDTO dto) {
+            this.ConfirmationNumber = dto.ConfirmationNumber;
+            this.FlightId = dto.FlightId;
+            this.PassengerId = dto.PassengerId;
+            this.Flights = new List<BookedFlight>();
+            this.Purchasers = new List<PurchasedFlight>();
+            this.Dreams = new List<DreamFlight>();
+        }
+
     }
 }
