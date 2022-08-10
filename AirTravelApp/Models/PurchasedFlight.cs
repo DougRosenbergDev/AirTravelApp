@@ -8,8 +8,8 @@
 
         public virtual Passenger Passenger { get; set; }
 
-        public int BookedFlightId { get; set; }
+        public int BookingId { get; set; }
 
-        public virtual Booking BookedFlight { get; set; }
+        public virtual Booking Booking { get; set; }
     }
 }

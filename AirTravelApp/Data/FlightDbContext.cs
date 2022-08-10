@@ -40,12 +40,12 @@ namespace AirTravelApp.Data
             builder.Entity<DreamFlight>()
                 .HasOne(df => df.Passenger)
                 .WithMany(p => p.DreamFlights)
-                .HasForeignKey(df => df.PassengerId)
+                .HasForeignKey(df => df.PassengerId);
             // do both sides
             builder.Entity<DreamFlight>()
                 .HasOne(df => df.Booking)
                 .WithMany(b => b.Dreams)
-                .HasForeignKey(df => df.BookingId)
+                .HasForeignKey(df => df.BookingId);
 
             // define fk for BookedFlight
             builder.Entity<BookedFlight>()    
@@ -54,13 +54,13 @@ namespace AirTravelApp.Data
             // owned playlist
             builder.Entity<PurchasedFlight>()
                 .HasOne(pf => pf.Passenger)
-                .WithMany(p => p.DreamFlights)
-                .HasForeignKey(pf => pf.PassengerId)
+                .WithMany(p => p.PurchasedFlights)
+                .HasForeignKey(pf => pf.PassengerId);
             // do both sides
             builder.Entity<PurchasedFlight>()
                 .HasOne(pf => pf.Booking)
                 .WithMany(b => b.Purchasers)
-                .HasForeignKey(pf => pf.BookingId)
+                .HasForeignKey(pf => pf.BookingId);
 
             // could be condensed in a different way: 2:30
             // e.HasKey(ps => ps.Id)

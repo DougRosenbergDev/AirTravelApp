@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AirTravelApp",
+    "\\AirTravelApp\\Data",
+    "\\AirTravelApp\\Models"
   ],
-  "SelectedNode": "\\AirTravelApp.sln",
+  "SelectedNode": "\\AirTravelApp\\Models\\BookedFlight.cs",
   "PreviewInSolutionExplorer": false
 }
