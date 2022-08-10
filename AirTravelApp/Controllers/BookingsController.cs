@@ -51,6 +51,11 @@ namespace AirTravelApp.Controllers
                 return NotFound();
             }
 
+            //var purchasers = await _context.Passengers.Include(p => p.PurchasedFlights)
+            //    .Where(p => p.PurchasedFlights
+            //    .Where(pf => pf.BookingId == id));
+                
+
             return booking;
         }
 
