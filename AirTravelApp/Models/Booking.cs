@@ -15,6 +15,7 @@
         public virtual ICollection<BookedFlight> Flights { get; set; }
 
         public virtual ICollection<PurchasedFlight> Purchasers { get; set; }
+
         public virtual ICollection<DreamFlight> Dreams { get; set; }
     }
 }

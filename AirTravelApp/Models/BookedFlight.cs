@@ -4,9 +4,10 @@
     {
         public int Id { get; set; }
         public int FlightId { get; set; }
-        public Flight Flight { get; set; }
+        public virtual Flight Flight { get; set; }
         public int BookedFlightID { get; set; }
-        public Booking Booking { get; set; }
+        //
+        public virtual Booking Booking { get; set; }
 
     }
 }
