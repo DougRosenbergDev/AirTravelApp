@@ -38,7 +38,7 @@ namespace AirTravelApp.Controllers
 
         // GET: api/Bookings/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Booking>> GetBooking(int id)
+        public async Task<ActionResult<BookingDetailsDTO>> GetBooking(int id)
         {
           if (_context.BookedFlights == null)
           {
@@ -51,12 +51,24 @@ namespace AirTravelApp.Controllers
                 return NotFound();
             }
 
-            //var purchasers = await _context.Passengers.Include(p => p.PurchasedFlights)
-            //    .Where(p => p.PurchasedFlights
-            //    .Where(pf => pf.BookingId == id));
-                
+            var purchasers = await _context.Passengers.Where(p => p.PurchasedFlights.Where(pf => pf.BookingId == booking.Id).Any()).ToListAsync();
+            var dreams = await _context.Passengers.Where(p => p.DreamFlights.Where(pf => pf.BookingId == booking.Id).Any()).ToListAsync();
+            var flights = await _context.Flights.Where(p => p.AppearsOnFlights.Where(aof => aof.BookingId == booking.Id).Any()).ToListAsync();
 
-            return booking;
+            var pdDTO = new BookingDetailsDTO
+            {
+                Id = booking.Id,
+                Name = booking.Name,
+                Description = booking.Description,
+                FlightCount = booking.FlightCount,
+                DreamsCount = booking.DreamsCount,
+                Purchasers = purchasers,
+                Dreams = dreams,
+                Flights = flights
+
+            };
+
+            return Ok(pdDTO);
         }
 
         // PUT: api/Bookings/5
