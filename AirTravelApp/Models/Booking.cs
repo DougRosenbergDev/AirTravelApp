@@ -9,6 +9,9 @@ namespace AirTravelApp.Models
         public int FlightId { get; set; }
         public int PassengerId { get; set; }
 
+        // error fixing
+        
+
         // Not stored property
         public int PassengerCount => Purchasers?.Count ?? 0;
         public int DreamFlightCount => Dreams?.Count ?? 0;

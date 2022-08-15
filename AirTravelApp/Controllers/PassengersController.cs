@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AirTravelApp.Data;
 using AirTravelApp.Models;
+using AirTravelApp.DTO;
 
 namespace AirTravelApp.Controllers
 {
@@ -87,13 +88,22 @@ namespace AirTravelApp.Controllers
         // POST: api/Passengers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Passenger>> PostPassenger(Passenger passenger)
+        public async Task<ActionResult<Passenger>> PostPassenger(PassengerDTO pdDTO)
         {
           if (_context.Passengers == null)
           {
               return Problem("Entity set 'FlightDbContext.Passengers'  is null.");
           }
-            _context.Passengers.Add(passenger);
+            var passenger = new Passenger 
+            {
+                Age = pdDTO.Age,
+                FirstName = pdDTO.FirstName,
+                LastName = pdDTO.LastName,
+                Email = pdDTO.Email,
+                Job = pdDTO.Job,
+            };
+
+        _context.Passengers.Add(passenger);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPassenger", new { id = passenger.Id }, passenger);

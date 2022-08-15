@@ -58,10 +58,10 @@ namespace AirTravelApp.Controllers
             var pdDTO = new BookingDetailsDTO
             {
                 Id = booking.Id,
-                Name = booking.Name,
-                Description = booking.Description,
-                FlightCount = booking.FlightCount,
-                DreamsCount = booking.DreamsCount,
+                //Name = booking.Name,
+                //Description = booking.Description,
+                PassengerCount = booking.PassengerCount,
+                DreamFlightCount = booking.DreamFlightCount,
                 Purchasers = purchasers,
                 Dreams = dreams,
                 Flights = flights

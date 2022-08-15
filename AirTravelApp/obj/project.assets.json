@@ -9900,19 +9900,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Owner\\.nuget\\packages\\": {}
+    "C:\\Users\\digdr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+      "projectUniqueName": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
       "projectName": "AirTravelApp",
-      "projectPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
-      "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\obj\\",
+      "projectPath": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+      "packagesPath": "C:\\Users\\digdr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\digdr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
