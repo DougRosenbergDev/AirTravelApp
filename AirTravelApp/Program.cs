@@ -49,6 +49,13 @@ namespace AirTravelApp
             // 11Aug22 2:25:10
             app.UseCors("AllowAll");
 
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                await next();
+            });
+
             app.UseAuthorization();
 
             app.MapControllers();

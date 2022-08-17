@@ -107,7 +107,7 @@ namespace AirTravelApp.Controllers
                 DepartureAirport = flightDto.DepartureAirport,
                 ArrivalAirport = flightDto.ArrivalAirport,
                 PassengerLimit = flightDto.PassengerLimit,
-                AppearsOnFlights = new List<BookedFlight>()
+                //AppearsOnFlights = new List<BookedFlight>()
             };
             _context.Flights.Add(flight);
             await _context.SaveChangesAsync();
