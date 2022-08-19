@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {}
+    "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {
+    "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+        "projectUniqueName": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
         "projectName": "AirTravelApp",
-        "projectPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
-        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\obj\\",
+        "projectPath": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\AirTravelApp.csproj",
+        "packagesPath": "C:\\Users\\digdr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\digdr\\Desktop\\nextgen\\AirTravelApp\\AirTravelApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\digdr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,35 +42,35 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -3,14 +3,14 @@
     public class BookedFlight
     {
         public int Id { get; set; }
-        public int ConfirmationNumber { get; set; }
+
         public int FlightId { get; set; }
-        public int PassengerId { get; set; }
 
-        // Not stored property
-        // public int PassengerCount => Passengers?.Count ?? 0;
+        public virtual Flight Flight { get; set; }
 
-        // Navigation Properties
-        public virtual ICollection<Flight> Flights { get; set; }
+        public int BookingId { get; set; }
+        
+        public virtual Booking Booking { get; set; }
+
     }
 }

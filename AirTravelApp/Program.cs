@@ -9,6 +9,18 @@ namespace AirTravelApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // thursday 11-aug 2:23:16
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin();
+                        policy.AllowAnyMethod();
+                        policy.AllowAnyHeader();
+                    });
+            });
+
             builder.Services.AddDbContext<FlightDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -34,8 +46,17 @@ namespace AirTravelApp
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            // 11Aug22 2:25:10
+            app.UseCors("AllowAll");
 
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                await next();
+            });
+
+            app.UseAuthorization();
 
             app.MapControllers();
 

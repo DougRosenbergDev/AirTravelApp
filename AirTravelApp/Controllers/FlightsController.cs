@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AirTravelApp.Data;
 using AirTravelApp.Models;
+using AirTravelApp.DTO;
 
 namespace AirTravelApp.Controllers
 {
@@ -15,10 +16,12 @@ namespace AirTravelApp.Controllers
     public class FlightsController : ControllerBase
     {
         private readonly FlightDbContext _context;
+        private readonly ILogger<FlightsController> _logger;
 
-        public FlightsController(FlightDbContext context)
+        public FlightsController(ILogger<FlightsController> logger, FlightDbContext context)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Flights
@@ -84,12 +87,28 @@ namespace AirTravelApp.Controllers
         // POST: api/Flights
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Flight>> PostFlight(Flight flight)
+        public async Task<ActionResult<Flight>> PostFlight(FlightDTO flightDto)
         {
           if (_context.Flights == null)
           {
               return Problem("Entity set 'FlightDbContext.Flights'  is null.");
           }
+            // map our DTO
+            // step 1: create a new flight object
+            var flight = new Flight()
+            {
+                // pass fields, or create an empty contstructor, then create an overloaded constructor where we can pass
+                // an instance of a FlightDto and it would return a new Flight instance
+                FlightNumber = flightDto.FlightNumber,
+                DepartureDate = flightDto.DepartureDate,
+                ArrivalDate = flightDto.ArrivalDate,
+                DepartureTime = flightDto.DepartureTime,
+                ArrivalTime = flightDto.ArrivalTime,
+                DepartureAirport = flightDto.DepartureAirport,
+                ArrivalAirport = flightDto.ArrivalAirport,
+                PassengerLimit = flightDto.PassengerLimit,
+                //AppearsOnFlights = new List<BookedFlight>()
+            };
             _context.Flights.Add(flight);
             await _context.SaveChangesAsync();
 
